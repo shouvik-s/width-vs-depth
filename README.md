@@ -21,10 +21,14 @@ https://doi.org/10.48550/arXiv.1402.1869).
 ## Architectures
 
 **The Map:** The tent-map $f: [0,1] \to [0,1]$ and it is given by
-$$f(x) = 1 - |1 - 2x|.$$ 
+```math
+f(x) = 1 - |1 - 2x|.
+```
 Thus, it is a $2$-to-$1$ map. 
 Iterating it $n$ times converts it to a $2^n$-to-$1$ map, 
-$$f_n(x) = 1 - |(2^n x ~\text{mod}~ 2) - 1|$$
+```math
+f_n(x) = 1 - |(2^n x \; \text{mod} \; 2) - 1|
+```
 while preserving the definition of the domain and range.
 
 ### Two types of MLPs
@@ -105,7 +109,7 @@ for layer in self.rest_hidden:
     layer.weight[:2, :2] = torch.tensor([[2.0, -4.0], [2.0, -4.0]])
     layer.bias[:2] = torch.tensor([0.0, -0.5])
 ```
-It takes the two-component vector $\mathbf{u}$ from the previous layer and applies the tent function: $T(u) = 2\sigma(u) - 4\sigma(u - 0.5)$. Notice that both rows of the weight matrix are identical: $[2.0, -4.0]$. Row $0$ computes: $2u_0 - 4u_1$. Because $\mathbf{u} = \big(x, \sigma(x-0.5)\big)$, this exactly evaluates $T(x)$. After the ReLU, it remains $T(x)$ because the tent function is strictly non-negative. Row 1 computes: $2u_0 - 4u_1 - 0.5$. This evaluates $T(x) - 0.5$. After the ReLU, it becomes $\sigma(T(x) - 0.5)$. Therefore, the output state of this layer: $\big(T(x), \sigma(T(x) - 0.5)\big)^T$. _It is the exact same format as the input state_, just with $x$ replaced by $T(x)$. Because the state shape is preserved, we can stack as many of these identically wired layers as we want. Each layer folds the space in half, doubling the number of teeth in the sawtooth approximator of $f_n$.
+It takes the two-component vector $\mathbf{u}$ from the previous layer and applies the tent function: $f(u) = 2\sigma(u) - 4\sigma(u - 0.5)$. Notice that both rows of the weight matrix are identical: $[2.0, -4.0]$. Row $0$ computes: $2u_0 - 4u_1$. Because $\mathbf{u} = \big(x, \sigma(x-0.5)\big)$, this exactly evaluates $f(x)$. After the ReLU, it remains $f(x)$ because the tent function is strictly non-negative. Row 1 computes: $2u_0 - 4u_1 - 0.5$. This evaluates $f(x) - 0.5$. After the ReLU, it becomes $\sigma(f(x) - 0.5)$. Therefore, the output state of this layer: $\big(f(x), \sigma(f(x) - 0.5)\big)^T$. _It is the exact same format as the input state_, just with $x$ replaced by $f(x)$. Because the state shape is preserved, we can stack as many of these identically wired layers as we want. Each layer folds the space in half, doubling the number of teeth in the sawtooth approximator of $f_n$.
 
 The output layer collapses the 2D state back down to a scalar output,
 ```
