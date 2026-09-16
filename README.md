@@ -2,7 +2,7 @@
 
 ## Introduction
 
-**Objective:** This exercise demonstrates the difference between the width and depth of a multi-layer perceptron (MLP) in controlling its ability to learn many-to-one maps. 
+**Objective:** This exercise demonstrates the difference between the width and depth of a multi-layer perceptron (MLP) in controlling its ability to learn iterated maps that produce non-injective relationships. 
 
 **Outcome:** By contrasting the training of a shallow MLP (one hidden layer) and a deep MLP ($n$ hidden layers) on the $n$-fold iterated _tent map_, we show that depth attains the learning objective with the number of trainable parameters growing linearly in $n$, whereas the shallow network fails to train at any width up to 128 for $n \ge 4$ despite possessing more than sufficient representational capacity. Therefore, depth is the more efficient knob in two distinct ways: 
 1. it needs exponentially fewer parameters to *represent* the target (explicitly demonstrated by the parameter counts at $n = 2, 3$);
