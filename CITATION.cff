@@ -1,0 +1,82 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below, and cite the references listed."
+title: "Folding by Depth: A Hands-On Reproduction of Width-Depth Separation in ReLU Networks Learning Iterated Maps"
+authors:
+  - family-names: <your surname>
+    given-names: <your given name>
+    orcid: "https://orcid.org/0000-0003-1261-3261"
+type: software
+version: v1.0.0
+date-released: 2026-09-16
+doi: 10.5281/zenodo.XXXXXXX
+url: "https://github.com/shouvik-s/width-vs-depth"
+references:
+  - type: article
+    authors:
+      - family-names: Telgarsky
+        given-names: Misha
+    title: "Representation Benefits of Deep Feedforward Networks"
+    journal: "arXiv preprint arXiv:1509.08101"
+    year: 2015
+
+  - type: article
+    authors:
+      - family-names: Telgarsky
+        given-names: Misha
+    title: "Benefits of depth in neural networks"
+    journal: "arXiv preprint arXiv:1602.04485"
+    year: 2016
+
+  - type: article
+    authors:
+      - family-names: Montúfar
+        given-names: Guido
+      - family-names: Pascanu
+        given-names: Razvan
+      - family-names: Cho
+        given-names: Kyunghyun
+      - family-names: Bengio
+        given-names: Yoshua
+    title: "On the Number of Linear Regions of Deep Neural Networks"
+    journal: "arXiv preprint arXiv:1402.1869"
+    year: 2014
+
+  - type: article
+    authors:
+      - family-names: Malach
+        given-names: Eran
+      - family-names: Yehudai
+        given-names: Gilad
+      - family-names: Shalev-Shwartz
+        given-names: Shai
+      - family-names: Shamir
+        given-names: Ohad
+    title: "The Connection Between Approximation, Depth Separation and Learnability in Neural Networks"
+    journal: "arXiv preprint arXiv:2102.00434"
+    year: 2021
+
+  - type: article
+    authors:
+      - family-names: Chatziafratis
+        given-names: Vaggos
+      - family-names: Nagarajan
+        given-names: Sai Ganesh
+      - family-names: Panageas
+        given-names: Ioannis
+      - family-names: Wang
+        given-names: Xiao
+    title: "Depth-Width Tradeoffs in Neural Networks via Sharkovsky's Theorem"
+    journal: "arXiv preprint arXiv:1912.04378"
+    year: 2019
+
+  - type: article
+    authors:
+      - family-names: Milkert
+        given-names: Max
+      - family-names: Hyde
+        given-names: David
+      - family-names: Laine
+        given-names: Forrest
+    title: "Expressive Power of Deep Neural Networks with Piecewise Linear Activation Functions"
+    journal: "arXiv preprint arXiv:2311.18022"
+    year: 2023

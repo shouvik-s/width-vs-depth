@@ -1,4 +1,4 @@
-# Distinction between the width and depth of an MLP learning a many-to-one map
+# Folding by Depth: A Hands-On Reproduction of Width–Depth Separation in ReLU Networks Learning Iterated Maps
 
 ## Introduction
 
@@ -148,7 +148,7 @@ no width in that range reached within a tolerance of `tol = 1e-3`.
 | 7 | w > 128 | — | 8.44e-02 | fail | 8.340e-02 | 1 | 128 |
 | 8 | w > 128 | — | 8.49e-02 | fail | 8.341e-02 | 1 | 256 |
 
-**The deep network does work at any depth.** `8.33e-02` is `Var(y) = 1/12`,
+**The deep network does not work at any depth.** `8.33e-02` is `Var(y) = 1/12`,
 the best-fit constant through the dataset, and `pieces = 1` confirms that the model is a flat line. 
 
 **The shallow network's performance is a lottery, with no discernable trend visible.** Sweep at `n=3`:
