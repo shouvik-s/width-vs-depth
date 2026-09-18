@@ -259,9 +259,7 @@ code0.py                     the naive build
 code1.py                     code0.py + deterministic initialization + few other tweaks, including seed-averaging
 code1a.py                    code1.py + one line (2^-n jitter scaling)
 
-run_code0.py                 benchmarks code0  on a dense grid
-run_code1a.py                comparison between shallow & deep MLPs
-plot_code1a.py               plots three figures summarizing the output of code1a.py
+plot_code1a.py               plots three figures summarizing the output of code1a.py (run this to directly generate the figures)
 
 code1a_fig3_functions.png    shallow- vs deep-MLPs, what is actually learned
 code1a_fig1_params_vs_n.png  parameters at minimum sufficient width vs n
